@@ -1,6 +1,6 @@
 let express = require('express')
 
-let cityRouter = require('./product/router')
+let cityRouter = require('./SunlightInfo/router')
 
 let router = new express.Router
 

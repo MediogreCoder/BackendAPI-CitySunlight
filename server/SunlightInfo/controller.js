@@ -2,7 +2,7 @@ let model = require('./models')
 
 let controller = {
 
-  getAll(request, response) {
+  getAllCities(request, response) {
     model
       .find()
       .then(data=> response.json(data))
@@ -13,7 +13,8 @@ let controller = {
           .json({error: "Something went wrong"})
       })
   },
-  create(request, response) {
+  
+  createCity(request, response) {
     model
       .create(request.body)
       .then(data=> response.json(data))
@@ -24,7 +25,7 @@ let controller = {
           .json({error: "Something went wrong"})
       })
   },
-  getById(request, response) {
+  getCityById(request, response) {
     model
       .findById(request.params.id)
       .then(data=> response.json(data))
@@ -35,7 +36,7 @@ let controller = {
           .json({error: "Something went wrong"})
       })
   },
-  getByCity(request, response) {
+  getByCityName(request, response) {
     model
       .find({ City: request.body })
       .then(data=> response.json(data))
@@ -46,7 +47,7 @@ let controller = {
           .json({error: "Something went wrong"})
       })
   },
-  update(request, response) {
+  updateCity(request, response) {
     model
       .findByIdAndUpdate(request.params.id, request.body, {new: true})
       .then(data=> response.json(data))
@@ -57,7 +58,7 @@ let controller = {
           .json({error: "Something went wrong"})
       })
   },
-  delete(request, response) {
+  deleteCity(request, response) {
     model
       .findByIdAndRemove(request.params.id)
       .then(()=> response.json({success: true}))
@@ -68,7 +69,6 @@ let controller = {
           .json({error: "Something went wrong"})
       })
   }
-
 }
 
 module.exports = controller
