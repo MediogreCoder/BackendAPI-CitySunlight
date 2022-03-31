@@ -7,7 +7,7 @@ let controller = {
       .find()
       .then(data=> response.json(data))
       .catch(error=> {
-        console.error("Error on getAll()")
+        console.error("Error on getAllCities()")
         response
           .status(500)
           .json({error: "Something went wrong"})
@@ -19,7 +19,7 @@ let controller = {
       .create(request.body)
       .then(data=> response.json(data))
       .catch(error=> {
-        console.error("Error on create()")
+        console.error("Error on createCity()")
         response
           .status(500)
           .json({error: "Something went wrong"})
@@ -30,7 +30,7 @@ let controller = {
       .findById(request.params.id)
       .then(data=> response.json(data))
       .catch(error=> {
-        console.error("Error on getById()")
+        console.error("Error on getCityById()")
         response
           .status(500)
           .json({error: "Something went wrong"})
@@ -38,7 +38,7 @@ let controller = {
   },
   getByCityName(request, response) {
     model
-      .find({ City: request.body })
+      .findOne({City: request.body })
       .then(data=> response.json(data))
       .catch(error=> {
         console.error("Error on getByCity()")
@@ -52,7 +52,7 @@ let controller = {
       .findByIdAndUpdate(request.params.id, request.body, {new: true})
       .then(data=> response.json(data))
       .catch(error=> {
-        console.error("Error on update()")
+        console.error("Error on updateCity()")
         response
           .status(500)
           .json({error: "Something went wrong"})
@@ -63,7 +63,7 @@ let controller = {
       .findByIdAndRemove(request.params.id)
       .then(()=> response.json({success: true}))
       .catch(error=> {
-        console.error("Error on delete()")
+        console.error("Error on deleteCity()")
         response
           .status(500)
           .json({error: "Something went wrong"})
