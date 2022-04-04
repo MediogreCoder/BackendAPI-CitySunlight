@@ -1,5 +1,6 @@
 let app = require('./app')
 
+//listen on port 9000
 const PORT = 9000
 let server = app.listen(PORT)
 

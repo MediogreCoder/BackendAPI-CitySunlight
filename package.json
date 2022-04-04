@@ -1,5 +1,7 @@
 {
-  "scripts": {"start": "node index.js"},
+  "scripts": {"start": "node index.js",
+  "db:seed": "node server/SunlightInfo/Seed/data.js"},
+  
   "dependencies": {
     "express": "^4.17.3",
     "mongoose": "^6.2.9"
